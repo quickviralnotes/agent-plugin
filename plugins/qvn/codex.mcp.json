@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "qvn": {
+      "url": "https://mcp.quickviralnotes.xyz",
+      "http_headers": {
+        "x-qvn-mcp-client": "codex"
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "quickviralnotes",
+  "owner": {
+    "name": "Quick Viral Notes",
+    "url": "https://quickviralnotes.xyz"
+  },
+  "metadata": {
+    "description": "Quick Viral Notes plugins for Claude Code and the Claude app"
+  },
+  "plugins": [
+    {
+      "name": "qvn",
+      "source": "./plugins/qvn",
+      "description": "Write, schedule and analyze Substack Notes from your AI agent: generate notes from your knowledge bank, post or schedule them on Substack, and read note, post and subscriber stats.",
+      "category": "productivity",
+      "homepage": "https://quickviralnotes.xyz/claude-code-plugin",
+      "author": {
+        "name": "Quick Viral Notes",
+        "url": "https://quickviralnotes.xyz"
+      },
+      "keywords": [
+        "substack",
+        "substack-notes",
+        "newsletter",
+        "scheduling",
+        "writing",
+        "analytics",
+        "mcp"
+      ]
+    }
+  ]
+}

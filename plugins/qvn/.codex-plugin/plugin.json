@@ -1,0 +1,27 @@
+{
+  "name": "qvn",
+  "version": "0.1.0",
+  "description": "Write, schedule and analyze Substack Notes with Quick Viral Notes from Codex and the ChatGPT desktop app.",
+  "author": {
+    "name": "Quick Viral Notes",
+    "url": "https://quickviralnotes.xyz"
+  },
+  "homepage": "https://quickviralnotes.xyz/chatgpt-plugin",
+  "repository": "https://github.com/quickviralnotes/agent-plugin",
+  "keywords": ["substack", "substack-notes", "newsletter", "scheduling", "mcp", "codex"],
+  "mcpServers": "./codex.mcp.json",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Quick Viral Notes",
+    "shortDescription": "Write, schedule and analyze Substack Notes",
+    "longDescription": "Connects your agent to Quick Viral Notes: generate Substack Notes from your knowledge bank and proven formulas, post or schedule them straight to Substack, and read how your notes, posts and subscribers are doing.",
+    "developerName": "Quick Viral Notes",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://quickviralnotes.xyz",
+    "defaultPrompt": ["Show me how my recent Substack notes are doing"],
+    "brandColor": "#4F46E5",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "quickviralnotes",
+  "interface": {
+    "displayName": "Quick Viral Notes"
+  },
+  "plugins": [
+    {
+      "name": "qvn",
+      "source": {
+        "source": "local",
+        "path": "./plugins/qvn"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "qvn",
+  "version": "0.1.0",
+  "description": "Write, schedule and analyze Substack Notes with Quick Viral Notes from Claude Code.",
+  "author": {
+    "name": "Quick Viral Notes",
+    "url": "https://quickviralnotes.xyz"
+  },
+  "homepage": "https://quickviralnotes.xyz/claude-code-plugin",
+  "repository": "https://github.com/quickviralnotes/agent-plugin",
+  "keywords": ["substack", "substack-notes", "newsletter", "scheduling", "mcp", "claude-code"],
+  "mcpServers": {
+    "qvn": {
+      "type": "http",
+      "url": "https://mcp.quickviralnotes.xyz",
+      "headers": {
+        "x-qvn-mcp-client": "claude_code"
+      }
+    }
+  },
+  "skills": "./skills/"
+}
