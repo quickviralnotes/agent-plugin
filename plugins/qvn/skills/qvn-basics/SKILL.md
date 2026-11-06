@@ -9,7 +9,7 @@ Quick Viral Notes (QVN) connects this agent to the user's Substack through a hos
 
 ## 1. Make sure the tools are connected
 
-If QVN tools are visible (names containing `notes_manager`, `notes_gen_studio`, `substack_reader`, `get_published_note_stats`), skip to section 2. Do not reinstall anything, and do not start a new session.
+If QVN tools are visible (names containing `substack_read`, `my_substack`, `substack_write`, `notes_studio`), skip to section 2. Do not reinstall anything, and do not start a new session.
 
 If they are not visible, find out which stage failed. Check each stage in order and stop at the first one that fails:
 
@@ -33,15 +33,17 @@ Start with a QVN tool call, not with reading files or debugging:
 
 | The user wants to | Start with |
 |---|---|
-| Write or generate notes | `notes_gen_studio` (knowledge bank → formulas → generate) |
-| Post, schedule, edit or delete a note on Substack | `notes_manager` (`post` with optional `trigger_at`, `update_published`, `delete_published`, `list_scheduled_drafts`) |
-| Know how to post images, videos, links | `notes_gen_studio` action `posting_formats` |
-| See how notes or posts performed | `get_published_note_stats`, `get_published_post_stats` |
-| Read articles, notes, comments, inbox, feed | `substack_reader` |
-| Review their own replies, likes, restacks, DMs | `substack_activity` |
-| Look at subscribers | `substack_subscribers` |
-| Research newsletters in a niche | `newsletter_explorer` |
-| Follow a guided growth workflow | `search_workflows`, then `use_workflow` |
+| Write or generate notes | `notes_studio` (actions `search_knowledge_bank`, `formula_recommendations`, `generate`: knowledge bank → formulas → generate) |
+| Post, schedule, edit or delete a note on Substack | `substack_write` (action `post` with optional `trigger_at`, `update_published`, `delete_published`, `list_scheduled_drafts`) |
+| Know how to post images, videos, links | `notes_studio` action `posting_formats` |
+| See how notes or posts performed | `my_substack` (actions `note_stats`, `post_stats`) |
+| Read articles, notes, comments, inbox, feed | `substack_read` |
+| Review their own replies, likes, restacks, DMs | `my_substack` (actions `replies_made`, `likes_given`, `notes_and_restacks`, `dms`, `day_summary`, `dm_thread`) |
+| Look at subscribers | `my_substack` (actions `subscribers_list`, `subscriber_details`, `subscriber_events`) |
+| Research newsletters in a niche | `substack_read` (actions `newsletters_search`, `newsletters_intersection`, `newsletters_analytics`, `newsletters_suggest_queries`) |
+| Follow a guided growth workflow | `substack_read` action `workflows_search`, then `workflows_run` with the `slug` |
+
+QVN has four tools, and each takes an `action` field. `substack_read` and `my_substack` only read. `substack_write` changes Substack. Call a tool with `action: "help"` to get its live list of actions and parameters.
 
 Do only what was asked. Drafting is not posting: never post, schedule or delete on Substack unless the user asked for that action or confirmed it. Read current state before changing it, because the user may have edited notes in Substack or the QVN web app since you last looked.
 
@@ -49,7 +51,7 @@ Do only what was asked. Drafting is not posting: never post, schedule or delete 
 
 A successful tool response is not proof on its own.
 
-- After scheduling: call `notes_manager` `list_scheduled_drafts` and confirm the draft is there with the right time and any attachment.
+- After scheduling: call `substack_write` action `list_scheduled_drafts` and confirm the draft is there with the right time and any attachment.
 - After posting: give the user the note link from the response.
 - After deleting or editing: read the note back or list again.
 

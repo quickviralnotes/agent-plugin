@@ -6,7 +6,7 @@ user-invocable: false
 
 # Quick Viral Notes known errors
 
-Treat the error the tool returned as the truth. Don't retry the same call with the same inputs hoping for a different result, and don't guess a different call shape from memory: if a call was rejected for its shape, look it up again (`notes_gen_studio` action `posting_formats` for posting; the tool's own schema for the rest).
+Treat the error the tool returned as the truth. Don't retry the same call with the same inputs hoping for a different result, and don't guess a different call shape from memory: if a call was rejected for its shape, look it up again (`notes_studio` action `posting_formats` for posting; call the tool with `action: "help"` for the live parameter list of the rest).
 
 ## Access and account
 
@@ -29,7 +29,7 @@ Treat the error the tool returned as the truth. Don't retry the same call with t
 
 - **Note rejected or posted with odd formatting.** Note content must be HTML (`<p>`, `<strong>`, `<ul><li>`...), never markdown. Fix the HTML and retry.
 - **Scheduling.** `trigger_at` must be ISO 8601 with a timezone. Keep at least 2 hours between notes on the same day and use non-round minutes (:08, :17, :23, :38, :42, :47, :53). If a time conflicts, propose the next free slot rather than overwriting.
-- **Scheduled note missing its image or video.** Re-list with `list_scheduled_drafts`. If the attachment isn't there, re-upload with a fresh upload token; tokens are single-use and short-lived.
+- **Scheduled note missing its image or video.** Re-list with `substack_write` action `list_scheduled_drafts`. If the attachment isn't there, re-upload with a fresh upload token (`substack_write` action `image_upload_token` or `video_upload_token`); tokens are single-use and short-lived.
 - **Stats empty.** Brand-new notes take a while to collect stats. Empty stats on an account that has posted usually means the Substack session isn't synced (see `no_cookie`).
 
 ## When nothing here matches
